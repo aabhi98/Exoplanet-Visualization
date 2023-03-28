@@ -300,7 +300,7 @@ const planets = svg.selectAll("circle")
   const planetLabels = svg.selectAll(".planet-label")
   .data(data)
   .join("text")
-  .text(d => d.planet_name)
+  .text(d => `(name: ${d.planet_name}, distance: ${d.distance} ly)`)
   .attr("class", "planet-label")
   .style("font-size", "16px") // set the font size to 16 pixels
   .transition()
