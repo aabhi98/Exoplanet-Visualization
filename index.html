@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Homework #4: D3 innovation</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="nasa.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2 class="text-center">Homework #4: NASA Exoplanet visualization</h2>
+            <h3 class="text-center">Abhishek Annabathula - aannaba1@asu.edu</h3>
+            <div id="my_dataviz">
+                <div id="legend">
+                    <div class="legend-item">
+                      <div class="color-box" style="background-color:#00a1f5;"></div>
+                      <div class="legend-text" style="background-color:#00a1f5;">Gas Giant</div>
+                    </div>
+                    <div class="legend-item">
+                      <div class="color-box" style="background-color:#87d37c;"></div>
+                      <div class="legend-text" style="background-color:#87d37c;">Super Earth</div>
+                    </div>
+                    <div class="legend-item">
+                      <div class="color-box" style="background-color:#f4d03f;"></div>
+                      <div class="legend-text" style="background-color:#f4d03f;">Terrestrial</div>
+                    </div>
+                    <div class="legend-item">
+                      <div class="color-box" style="background-color:#ff0000;"></div>
+                      <div class="legend-text" style="background-color:#ff0000;">Neptune-like</div>
+                    </div>
+                    <div class="legend-item">
+                      <div class="color-box" style="background-color:#f03434;"></div>
+                      <div class="legend-text" style="background-color:#f03434;">Jovian</div>
+                    </div>
+                    <div class="legend-item">
+                      <div class="color-box" style="background-color:#f39c12;"></div>
+                      <div class="legend-text" style="background-color:#f39c12;">Sub-Neptune</div>
+                    </div>
+                    <div class="legend-item">
+                      <div class="color-box" style="background-color:#bdc3c7;"></div>
+                      <div class="legend-text" style="background-color:#bdc3c7;">Unknown</div>
+                    </div>
+                    <form onsubmit="event.preventDefault(); sliceData()" style="display: inline-block; margin-left: 10px; padding-top: 10px;">
+                        <label style="color: #f4d03f;">Enter data points here: </label>
+                        <input type="number" id="slice-input" placeholder="Enter number of data points to slice" value="1000">
+                        <button type="submit">Submit</button>
+                      </form>
+                    <div class="buttons">
+                        <button id="play-button">Play</button>
+                        <button id="stop-button">Stop</button>
+                        <button id="replay-button">Replay</button>
+                      </div>
+                  </div>
+                  
+                <svg id="svg_viz"></svg>
+                <div id="description-box">
+                    <h4>Description:</h4>
+                    <ul>
+                      <li>The length of the lines drawn from earth describe the distance of the exoplanet from the earth in light years</li>
+                      <li>The size of the circle showcases the size of the exo planet with respect to the size of the earth</li>
+                      <li>The opacity or luminous of the planet/circle describes the brightness of the exoplanet seen from earth</li>
+                      <li> The Play and Stop button are respectively used to pause and resume the animation. </li>
+                      <li> The Data points box is used to enter the number of data points are desired to be shown in the above visualization. </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- end of the container div -->
+        <!-- <canvas id="space"></canvas> -->
+    </body>
+</html>
